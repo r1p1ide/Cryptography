@@ -13,6 +13,23 @@ public class Assert {
         }
     }
 
+    public static void assertEquals(String testName, long expected, long actual) {
+        if (expected == actual) {
+            System.out.println(testName + " passed");
+        } else {
+            System.out.println(testName + " failed: expected " + expected + ", actual " + actual);
+        }
+    }
+
+    public static void assertEquals(String testName, long[] expected, long[] actual) {
+        if (Arrays.equals(expected, actual)) {
+            System.out.println(testName + " passed");
+        } else {
+            System.out.println(testName + " failed: expected " + Arrays.toString(expected) + ", actual " +
+                    Arrays.toString(actual));
+        }
+    }
+
     public static void assertEquals(String testName, double expected, double actual) {
         if (expected == actual) {
             System.out.println(testName + " passed");

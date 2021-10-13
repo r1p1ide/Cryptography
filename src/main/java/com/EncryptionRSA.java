@@ -35,7 +35,7 @@ public class EncryptionRSA {
     }
 
     public String decryptMsg(String cipherText){
-        long[] cipherMessage = splitStringToIntArray(cipherText);
+        long[] cipherMessage = splitStringToLongArray(cipherText);
         char[] buf = new char[cipherMessage.length];
         for (int i = 0; i < cipherMessage.length; i++) {
             cipherMessage[i] = binPow(cipherMessage[i], d) % n;
@@ -80,7 +80,7 @@ public class EncryptionRSA {
         return d;
     }
 
-    public static long grandCentralDispatch(long e, long z) {
+    public long grandCentralDispatch(long e, long z) {
         if(e == 0){
             return z;
         }
@@ -105,7 +105,7 @@ public class EncryptionRSA {
         return sb.toString();
     }
     
-    public long[] splitStringToIntArray(String string) {
+    public long[] splitStringToLongArray(String string) {
         Scanner scanner = new Scanner(string);
         List<Integer> list = new ArrayList<>();
         while (scanner.hasNextInt()) {
@@ -116,7 +116,7 @@ public class EncryptionRSA {
         return intArray;
     }
 
-    static class Factor {
+    public static class Factor {
         private final long p;
         private final long q;
 
