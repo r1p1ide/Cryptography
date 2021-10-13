@@ -96,4 +96,40 @@ public class Assert {
             }
         }
     }
+
+    public static void assertEquals(String testName, Object expected, Object actual) {
+        if (expected.getClass().equals(actual.getClass())) {
+            System.out.println(testName + " passed");
+        } else {
+            System.out.println(testName + " failed: expected " + expected + ", actual " + actual);
+        }
+    }
+
+    public static void assertEquals(String testName, Object[] expected, Object[] actual) {
+        if (Arrays.equals(expected, actual)) {
+            System.out.println(testName + " passed");
+        } else {
+            System.out.println(testName + " failed: expected " + arrayToString(expected) + ", actual " + arrayToString(actual));
+        }
+    }
+
+    public static void fail(String msg) {
+        throw new AssertionError();
+    }
+
+    private static String arrayToString(Object[] array) {
+        String result = "{";
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != null) {
+                result += array[i].toString();
+            } else {
+                result += "null";
+            }
+            if (array.length - 1 != i ) {
+                result += ", ";
+            }
+        }
+        result += "}";
+        return result;
+    }
 }

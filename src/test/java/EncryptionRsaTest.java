@@ -10,6 +10,7 @@ public class EncryptionRsaTest {
         testConcatenateCharArray();
         testSplitStringToLongArray();
         testIsPrime();
+        testIsPrimeException();
     }
 
     public static void testEulerFunction() {
@@ -47,6 +48,18 @@ public class EncryptionRsaTest {
         EncryptionRSA.Factor factor = new EncryptionRSA.Factor(3764353);
         boolean actual = factor.isPrime(9677);
         assertEquals("testIsPrime: ", true, actual);
+    }
+
+    public static void testIsPrimeException() {
+        try {
+            EncryptionRSA.Factor factor = new EncryptionRSA.Factor(3764354);
+            boolean actual = factor.isPrime(9676);
+            assertEquals("testIsPrimeException: ", false, actual);
+            fail("Exception not found. Test failed.");
+        }
+        catch (Exception e) {
+            assertEquals("testIsPrimeException: ", new IllegalArgumentException(), e);
+        }
     }
 
 }
