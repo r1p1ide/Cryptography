@@ -1,0 +1,12 @@
+
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô‡ÂÄ8êòóÆ/
+j	java:S116"NRename this field "Key" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìÁÂ8êòóÆ/
+@
+java:S5542"#Use secure mode and padding scheme.(ó³‹8êòóÆ/
+M
+java:S1172"+Remove this unused method parameter "key1".(½¦®Ìşÿÿÿÿ8êòóÆ/
+M
+java:S1172"+Remove this unused method parameter "key2".(âÃÓ’üÿÿÿÿ8êòóÆ/
+G
+java:S1068"*Remove this unused "cipher" private field.(ó³‹8êòóÆ/
